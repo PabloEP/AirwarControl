@@ -33,7 +33,7 @@ public class Main extends AppCompatActivity {
         btnConectar.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-
+                //Hilo para cargar la coneccion al MeshManager
                 new Thread() {
                     @Override
                     public void run() {
@@ -43,30 +43,34 @@ public class Main extends AppCompatActivity {
                         EditText txtBytes = (EditText) findViewById(R.id.txtBytes);
                         EditText txtID = (EditText) findViewById(R.id.txtID);
                         EditText txtTel = (EditText) findViewById(R.id.txtTel);
-                        TextView lblConec = (TextView) findViewById(R.id.lblConeccion);
                         portnumber = Integer.parseInt(txtPuertoManager.getText().toString());
                         hostname = txtIPManager.getText().toString();
-                        ;
+
 
                         JSONObject jsonObject = new JSONObject();
-                        Socket socket = null;
+                        Socket socket;
                         try {
+                            Log.i(debugString, "Llenando el Json");
                             jsonObject.put("NodoTel", Integer.parseInt(txtTel.getText().toString()));
                             jsonObject.put("NodoID", txtID.getText().toString());
                             jsonObject.put("Bytes", Integer.parseInt(txtBytes.getText().toString()));
                             jsonObject.put("IPNodo", txtIPNodo.getText().toString());
 
+
                             Log.i(debugString, jsonObject.toString());
+
 
 
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
                         try {
+                            TextView lblConec = (TextView) findViewById(R.id.lblConeccion);
                             Log.i(debugString, "Tratando de conectar");
 
                             socket = new Socket(hostname, portnumber);
                             Log.i(debugString, "Coneccion establecida");
+                            lblConec.setText("Conectado");
 
                             //Enviar json
                             BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
@@ -84,6 +88,7 @@ public class Main extends AppCompatActivity {
                     }
 
                 }.start();
+
             }
         });
 
