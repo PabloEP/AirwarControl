@@ -19,8 +19,8 @@ import java.net.Socket;
 
 public class Main extends AppCompatActivity {
 
-    private static  int portnumber = 1101;
-    private static  String hostname = "192.168.0.114";
+    private static  int portnumber;
+    private static  String hostname;
     private Button btnConectar;
     private static final String debugString = "debug";
     @Override
@@ -65,12 +65,10 @@ public class Main extends AppCompatActivity {
                             e.printStackTrace();
                         }
                         try {
-                            TextView lblConec = (TextView) findViewById(R.id.lblConeccion);
                             Log.i(debugString, "Tratando de conectar");
 
                             socket = new Socket(hostname, portnumber);
                             Log.i(debugString, "Coneccion establecida");
-                            lblConec.setText("Conectado");
 
                             //Enviar json
                             BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
@@ -83,7 +81,7 @@ public class Main extends AppCompatActivity {
                             Log.i(debugString, "llega al reader");
                             Log.i(debugString, br.readLine());
                         } catch (IOException e) {
-                            e.printStackTrace();
+                            Log.i(debugString, "Se cayó la conexion");
                         }
                     }
 

@@ -9,24 +9,14 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.Main.Main">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Sin Conectar"
-        android:id="@+id/lblConeccion"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Conectar"
         android:id="@+id/btnConectar"
-        android:layout_above="@+id/lblConeccion"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/textView4"
+        android:layout_toStartOf="@+id/textView4" />
 
     <EditText
         android:layout_width="wrap_content"
