@@ -109,7 +109,7 @@ public class Main extends AppCompatActivity {
                             jsonObject.put("Bytes", Integer.parseInt(txtBytes.getText().toString()));
                             jsonObject.put("NodoPort", Integer.parseInt(txtPuertoNodo.getText().toString()));
                             jsonObject.put("NodoIP", IPNodo);
-                            jsonObject.put("Tipo", 1);
+                            jsonObject.put("TipoAccion", 1);
 
 
                             Log.i(debugString, jsonObject.toString());
@@ -137,9 +137,6 @@ public class Main extends AppCompatActivity {
                             String recibido = br.readLine();
                             Log.i(debugString, recibido);
 
-                            jsonRecibido = gson.fromJson(recibido, JsonElement.class).getAsJsonObject();
-                            String IP = String.valueOf(jsonRecibido.get("NodoIP"));
-                            Log.i(debugString, IP);
 
 
                         } catch (IOException e) {
