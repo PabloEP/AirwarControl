@@ -39,6 +39,7 @@ public class Main extends AppCompatActivity {
     Gson gson = new Gson();
     JsonObject jsonRecibido = new JsonObject();
     JSONObject jsonObject = new JSONObject();
+    private static int limite,actual;
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -87,6 +88,7 @@ public class Main extends AppCompatActivity {
                         IPNodo = obtenerIP();
                         portnumber = Integer.parseInt(txtPuertoManager.getText().toString());
                         hostname = txtIPManager.getText().toString();
+                        limite = Integer.parseInt(txtBytes.toString());
 
 
                         /*
@@ -111,7 +113,7 @@ public class Main extends AppCompatActivity {
                             jsonObject.put("Bytes", Integer.parseInt(txtBytes.getText().toString()));
                             jsonObject.put("NodoPort", Integer.parseInt(txtPuertoNodo.getText().toString()));
                             jsonObject.put("NodoIP", IPNodo);
-                            jsonObject.put("TipoAccion", 1);
+                            jsonObject.put("TipoAccion", 7);
 
 
                             Log.i(debugString, jsonObject.toString());
