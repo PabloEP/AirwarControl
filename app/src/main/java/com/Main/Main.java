@@ -64,6 +64,7 @@ public class Main extends AppCompatActivity {
                     public void run() {
                         //Base 64
                         /*
+                        Base
                         String testValue = "32515";
                         byte[] encodeValue = Base64.encode(testValue.getBytes(), Base64.DEFAULT);
                         byte[] decodeValue = Base64.decode(encodeValue, Base64.DEFAULT);
