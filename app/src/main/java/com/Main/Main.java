@@ -37,14 +37,8 @@ public class Main extends AppCompatActivity {
     private static final String debugString = "debug";
     Nodo nodo = new Nodo();
     Gson gson = new Gson();
-    JsonObject jsonRecibido = new JsonObject();
     JSONObject jsonObject = new JSONObject();
-    private static int limite,actual;
-    /**
-     * ATTENTION: This was auto-generated to implement the App Indexing API.
-     * See https://g.co/AppIndexing/AndroidStudio for more information.
-     */
-    private GoogleApiClient client;
+
 
 
     @Override
@@ -88,22 +82,7 @@ public class Main extends AppCompatActivity {
                         IPNodo = obtenerIP();
                         portnumber = Integer.parseInt(txtPuertoManager.getText().toString());
                         hostname = txtIPManager.getText().toString();
-                        limite = Integer.parseInt(txtBytes.toString());
 
-
-                        /*
-                        //Llenando datos del nodo
-                        nodo.setNodoBytes(Integer.parseInt(txtBytes.getText().toString()));
-                        nodo.setNodoID(txtID.getText().toString());
-                        nodo.setNodoIP(IPNodo);
-                        nodo.setNodoPort(Integer.parseInt(txtPuertoNodo.getText().toString()));
-                        nodo.setNodoTel(Integer.parseInt(txtTel.getText().toString()));
-
-
-                        String nodoJSON = gson.toJson(nodo);
-                        Log.i(debugString, "El JSON ES:        !!!!!!!!!");
-                        Log.i(debugString, nodoJSON);
-                        */
 
                         Socket socket;
                         try {
@@ -152,10 +131,6 @@ public class Main extends AppCompatActivity {
 
             }
         });
-
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
     private String obtenerIP() {
@@ -203,43 +178,5 @@ public class Main extends AppCompatActivity {
     }
     */
 
-    @Override
-    public void onStart() {
-        super.onStart();
 
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client.connect();
-        Action viewAction = Action.newAction(
-                Action.TYPE_VIEW, // TODO: choose an action type.
-                "Main Page", // TODO: Define a title for the content shown.
-                // TODO: If you have web page content that matches this app activity's content,
-                // make sure this auto-generated web page URL is correct.
-                // Otherwise, set the URL to null.
-                Uri.parse("http://host/path"),
-                // TODO: Make sure this auto-generated app URL is correct.
-                Uri.parse("android-app://com.Main/http/host/path")
-        );
-        AppIndex.AppIndexApi.start(client, viewAction);
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        Action viewAction = Action.newAction(
-                Action.TYPE_VIEW, // TODO: choose an action type.
-                "Main Page", // TODO: Define a title for the content shown.
-                // TODO: If you have web page content that matches this app activity's content,
-                // make sure this auto-generated web page URL is correct.
-                // Otherwise, set the URL to null.
-                Uri.parse("http://host/path"),
-                // TODO: Make sure this auto-generated app URL is correct.
-                Uri.parse("android-app://com.Main/http/host/path")
-        );
-        AppIndex.AppIndexApi.end(client, viewAction);
-        client.disconnect();
-    }
 }
