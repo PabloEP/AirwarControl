@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,125 +10,90 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.Main.Main">
 
-    <Button
+    <TextView
+        android:id="@+id/txtPuntos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Conectar"
-        android:id="@+id/btnConectar"
-        android:layout_alignParentBottom="true"
-        android:layout_toLeftOf="@+id/textView4"
-        android:layout_toStartOf="@+id/textView4" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtIPManager"
+        android:layout_marginTop="27dp"
+        android:text="Puntos:"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
         android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/textView2"
-        android:layout_toEndOf="@+id/textView2"
-        android:inputType="text" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
+        android:id="@+id/txtMemoria"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="IP Manager:"
-        android:id="@+id/textView"
-        android:layout_alignBottom="@+id/txtIPManager"
-        android:layout_toLeftOf="@+id/txtIPManager"
-        android:layout_toStartOf="@+id/txtIPManager" />
+        android:layout_below="@+id/txtPuntos"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:text="Memoria:"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold|italic" />
 
     <TextView
+        android:id="@+id/txtNivel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Puerto Manager:"
-        android:id="@+id/textView2"
-        android:layout_below="@+id/textView"
+        android:layout_marginTop="11dp"
+        android:text="Nivel:"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        android:layout_below="@+id/txtMemoria"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/txtHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Horizontal:"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        android:layout_below="@+id/txtNivel"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/txtVertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:text="Vertical:"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        android:layout_below="@+id/txtHorizontal"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/txtAccion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:text="Accion:"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        android:layout_below="@+id/txtVertical"
+        android:layout_alignRight="@+id/txtPuntos"
+        android:layout_alignEnd="@+id/txtPuntos" />
+
+    <Button
+        android:id="@+id/btnShoot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_red_dark"
+        android:text="SHOOT!"
+        android:textAlignment="center"
+        android:textSize="70sp"
+        android:textStyle="bold|italic"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Puerto Nodo:"
-        android:id="@+id/textView3"
-        android:layout_below="@+id/txtPuertoManager"
-        android:layout_toLeftOf="@+id/txtPuertoManager"
-        android:layout_toStartOf="@+id/txtPuertoManager" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Bytes:"
-        android:id="@+id/textView4"
-        android:layout_below="@+id/textView3"
-        android:layout_alignRight="@+id/textView3"
-        android:layout_alignEnd="@+id/textView3" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtPuertoManager"
-        android:layout_alignBottom="@+id/textView2"
-        android:layout_toRightOf="@+id/textView2"
-        android:layout_toEndOf="@+id/textView2"
-        android:inputType="number" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtPuertoNodo"
-        android:layout_alignBottom="@+id/textView3"
-        android:layout_toRightOf="@+id/textView2"
-        android:layout_toEndOf="@+id/textView2"
-        android:inputType="text" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtBytes"
-        android:layout_alignBottom="@+id/textView4"
-        android:layout_alignLeft="@+id/txtPuertoNodo"
-        android:layout_alignStart="@+id/txtPuertoNodo"
-        android:inputType="number" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="ID:"
-        android:id="@+id/textView5"
-        android:layout_below="@+id/textView4"
-        android:layout_toLeftOf="@+id/txtBytes"
-        android:layout_toStartOf="@+id/txtBytes" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Tel:"
-        android:id="@+id/textView6"
-        android:layout_below="@+id/textView5"
-        android:layout_alignRight="@+id/textView2"
-        android:layout_alignEnd="@+id/textView2" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtID"
-        android:layout_above="@+id/textView6"
-        android:layout_alignLeft="@+id/txtBytes"
-        android:layout_alignStart="@+id/txtBytes" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtTel"
-        android:layout_alignBottom="@+id/textView6"
-        android:layout_alignLeft="@+id/txtID"
-        android:layout_alignStart="@+id/txtID" />
-
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>
